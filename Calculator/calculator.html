@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body>
+    <table class="calculator">
+     <tr>
+        <td colspan="3">
+           <input type="text" class="display-box" id="result" disabled> 
+
+           <td>
+            <input type="button" value="AC" onclick="clearScreen()" id="btn-1">  
+          </td>  
+        </td>
+       
+     </tr>
+
+     <tr>
+        <td>
+            <input type="button" value="1" onclick="display('1')" id="btn">  
+          </td>
+          <td>
+            <input type="button" value="2" onclick="display('2')" id="btn">  
+          </td>
+          <td>
+            <input type="button" value="3" onclick="display('3')" id="btn">  
+          </td>
+          <td>
+            <input type="button" value="/" onclick="display('/')" id="btn">  
+          </td>
+     </tr>
+
+     <tr>
+        <td>
+            <input type="button" value="4" onclick="display('4')" id="btn">  
+          </td>
+          <td>
+            <input type="button" value="5" onclick="display('5')" id="btn">  
+          </td>
+          <td>
+            <input type="button" value="6" onclick="display('6')" id="btn">  
+          </td>
+          <td>
+            <input type="button" value="*" onclick="display('*')" id="btn">  
+          </td>
+     </tr>
+
+     <tr>
+        <td>
+            <input type="button" value="7" onclick="display('7')" id="btn">  
+          </td>
+          <td>
+            <input type="button" value="8" onclick="display('8')" id="btn">  
+          </td>
+          <td>
+            <input type="button" value="9" onclick="display('9')" id="btn">  
+          </td>
+          <td>
+            <input type="button" value="-" onclick="display('-')" id="btn">  
+          </td>
+     </tr>
+
+     <tr>
+        <td>
+            <input type="button" value="." onclick="display('.')" id="btn">  
+          </td>
+          <td>
+            <input type="button" value="0" onclick="display('0')" id="btn">  
+          </td>
+          <td>
+            <input type="button" value="=" onclick="solve()" id="btn">  
+          </td>
+          <td>
+            <input type="button" value="+" onclick="display('+')" id="btn">  
+          </td>
+         
+          <br><br>
+
+         
+     </tr>
+    </table>
+
+    <script>
+        var input = document.getElementById("result");
+        function display(value) {
+            input.value += value;
+        }
+
+        function solve() {
+            try {
+                input.value = eval(input.value);
+            }
+            catch (err) {
+                alert("invalid expression");
+            }
+        }
+        function clearScreen() {
+            input.value = "";
+        }
+    </script>
+</body>
+</html>
